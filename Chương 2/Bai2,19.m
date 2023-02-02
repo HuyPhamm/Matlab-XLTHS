@@ -1,0 +1,15 @@
+N=300;
+num=[ 0.5 0.27 ];
+den=[ 1 0.77 ];
+h1=impz(num,den,N);
+n=0:N-1;
+x=cos(20.*pi.*n/.256)+cos(200.*pi.*n/.256);
+y1=conv(x,h1); 
+subplot(211); stem(y1);
+title('y1(n)'); 
+num1=[0.45 0.5 0.45];
+den1=[1 -0.53 0.46];
+h2=impz(num1,den1,N);
+y2=conv(x,h2); 
+subplot(212); stem(y2);
+title('y2(n)');
